@@ -1,0 +1,21 @@
+Stats that make you harder to fool.
+
+A small toolkit, with the limits attached.
+
+Start with goals, assists and points. A player's points equal goals plus assists. Up to two assists can be awarded on a goal. A second assist may be a brilliant pass that started the whole attack or a relatively ordinary contribution; the box score does not distinguish them. A high point total is evidence of production. It is not a complete description of defending, usage, teammates or opportunity.
+
+Time on ice is context. Twenty minutes in a difficult matchup is a different job from ten minutes of sheltered attacking shifts. Power-play time adds opportunities that some players do not receive. Per-game statistics help compare players who missed games, but a player cannot help his team while absent. Per-sixty-minute rates adjust for playing time; they can also make tiny samples look deceptively impressive. A rate and its sample size belong together.
+
+A shot on goal is a shot that would enter the net without a save. Attempts that miss the target or get blocked are counted differently. Corsi is a name for all shot attempts; Fenwick excludes blocked attempts. Possession discussions often use those attempts as a proxy for which team is spending time attacking. They are not a literal stopwatch of puck control, and an easy outside attempt is not equivalent to a dangerous chance from the slot.
+
+Expected goals assigns a probability to a shot using a model's information about the chance. Adding those probabilities estimates the goals that collection of chances might usually produce. It is useful for separating opportunity creation from finishing in a small sample. It does not say that a team deserved an exact final score, and it does not see everything a coach or viewer can see. Public models vary, so compare like with like and name the provider when making a precise claim.
+
+Plus-minus adds or subtracts for certain goals while a player is on the ice, excluding many power-play situations and with other rule details. It is heavily affected by teammates, goalies and deployment. It is a clue to investigate, not a defensive ranking. A strong player on a weak team can look poor by this measure. A passenger on a dominant line can look excellent.
+
+Shooting percentage is goals divided by shots on goal. A sudden spike can reflect improved chances, exceptional finishing, random variation or some combination. PDO adds a team's on-ice shooting percentage and save percentage, usually on a scale around one thousand. People use it as a warning about unusually favourable or unfavourable percentages. It is not a law requiring every team to return to exactly the same number, because skill and context still exist.
+
+Team power-play percentage measures goals per opportunity, and penalty-kill percentage measures opportunities survived without allowing a power-play goal. Those summary rates hide opportunity length, short-handed goals and changing personnel. A team that draws lots of penalties may benefit more than a slightly more efficient team that rarely gets a power play. Special teams and five-on-five performance should be examined separately before being combined into a full picture.
+
+Here is a useful fan sentence: I like the chances they are creating, but I want a larger sample before deciding the finishing has changed. Another is: the goalie faced difficult lateral plays, so the raw percentage needs context. Those statements leave room to update your opinion. Be suspicious of any stat used as a conversation-ending verdict about a whole player. The point of numbers is to help you ask a sharper question.
+
+Something to try next time. Pick a leading scorer from a completed season. Compare points, games played and power-play goals before deciding what drove the total.
