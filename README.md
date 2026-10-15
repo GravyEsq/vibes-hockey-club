@@ -7,6 +7,7 @@ A phone-friendly hockey companion for friends following the Canadiens, Wild, Pen
 - **Listen-through course:** 18 original chapters, about 72 minutes of synthetic narration. Play in order, resume, change speed, or download the MP3s in three ZIP packs.
 - **Quick lookup:** 321 short searchable pages about rules, teams, players, coaches, history, health, previous seasons and hockey terms.
 - **English–Hebrew glossary:** 93 terms with English definitions and Hebrew names and explanations. Search either language, with or without Hebrew vowel marks.
+- **Color theme:** choose System, Light or Dark in the header. Your choice is saved on this device; System follows the device’s appearance setting.
 
 Current-season scores are hidden by default. They are excluded from Quick lookup. Historical outcomes are discussed openly. The edition is dated **15 October 2026**; report dates and official source links appear in the app. This is a saved research edition, not an automatically updating news or injury service.
 
