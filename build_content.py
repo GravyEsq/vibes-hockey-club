@@ -11,7 +11,7 @@ def lesson(slug,title,deck,text,exercise,category='Hockey from zero'):
     lessons.append(dict(id=slug,title=title,deck=deck,paragraphs=paras(text),exercise=exercise,category=category))
 
 lesson('start','01 · You already belong here','A way into the game, without homework anxiety.', '''
-Welcome to the Vibes Hockey Club. Five friends, five teams, and absolutely no requirement to justify how you chose yours. Picking a team because the name, colours, city or general emotional weather feels right is a perfectly respectable beginning. The useful next step is learning what you are looking at. This course starts from zero, then gives Montreal extra attention and introduces Minnesota, Pittsburgh, Ottawa and Seattle. You can listen in order or dip into a team guide.
+Welcome to the Vibes Hockey Club. Five friends, five teams, and absolutely no requirement to justify how you chose yours. Picking a team because the name, colours, city or general emotional weather feels right is a perfectly respectable beginning. The useful next step is learning what you are looking at. This course starts from zero, then gives Montreal extra attention and introduces Minnesota, Pittsburgh, Ottawa and Seattle. You can read in order or dip into a team guide.
 
 The first thing to know is that hockey is a game about making time and space disappear. A player who has the puck wants enough of both to do something useful. The defending team wants to take them away. Skating, passing, checking and positioning are different tools for that same contest. A beautiful pass matters because it reaches somebody before the defenders can adjust. A good defensive play may look uneventful because it prevents the exciting thing from happening.
 
@@ -21,7 +21,7 @@ There are several kinds of enjoyment available. You can follow the score, follow
 
 For your first few Canadiens games, pick three anchors: Nick Suzuki when Montreal has the puck, Lane Hutson when the defence starts an attack, and whichever goalie is actually starting. Add Cole Caufield once following three people becomes easy. The purpose is recognition, not memorisation. Soon you will notice who is on the ice before the commentator tells you.
 
-The guide is a snapshot assembled on 15 October 2026. Roster and statistical tables come from official NHL data. Injury cards carry the date of the report, which may be earlier. Tactical watch points are explanations and questions, not secret knowledge of a coach's instructions. Current-season scores are hidden until you choose to reveal them; the audio course does not read out current-season results. Previous seasons and historical outcomes are discussed openly.
+The guide is a snapshot assembled on 15 October 2026. Roster and statistical tables come from official NHL data. Injury cards carry the date of the report, which may be earlier. Tactical watch points are explanations and questions, not secret knowledge of a coach's instructions. Current-season scores are hidden until you choose to reveal them; the course keeps current-season results out of its chapters. Previous seasons and historical outcomes are discussed openly.
 ''','During the next game, follow one player for an entire shift. Ask where he goes when he does not have the puck.')
 
 lesson('shape','02 · Six people, one very small puck','Positions, shifts and why everyone keeps getting off.', '''
@@ -172,7 +172,7 @@ The 2021 run to the Stanley Cup Final showed how quickly a season can become a s
 Boston is the great recurring historical antagonist. Toronto adds another old and culturally loaded rivalry. Ottawa provides a nearer contemporary Canadian matchup with its own developing story. You do not need to hate everybody on command. Rivalries become meaningful when a game, playoff series or particular player gives you your own reason. Watch a few meetings before borrowing a grievance from somebody who was angry in 1979.
 
 Your simplest Montreal identity card is this: a French-Canadian institution with unmatched Cup history, a long modern wait and an exciting young core. The fun is learning what this particular group becomes. Enjoy the old banners without demanding that every October resemble a dynasty. The crest gives the team a past. Suzuki, Caufield, Hutson, Slafkovsky and their teammates still have to create the present.
-''','Pick one historical era to explore after the drive: Richard, the 1970s dynasty, Roy, Price, or the 2021 run.','Canadiens deep dive')
+''','Pick one historical era to explore next: Richard, the 1970s dynasty, Roy, Price, or the 2021 run.','Canadiens deep dive')
 
 lesson('montreal-people','11 · Montreal: learn these people first','A viewing guide to the core and the jobs around it.', '''
 Start with captain Nick Suzuki. A centre's value is easy to underestimate if you watch only the final touch before a goal. Follow Suzuki's support routes, how quickly he makes the next decision and where he positions himself when Montreal loses possession. A centre who makes his wings' jobs easier can affect an entire line without dominating the highlight reel. Number fourteen is your anchor when the game feels too fast.
@@ -315,8 +315,8 @@ Afterward, use a three-sentence notebook. First: this was the repeatable thing I
 
 As you watch more, add one layer at a time. Learn the third-line centre. Compare home and road matchups. Read a completed-season stat table beside the roster changes. Ask whether an injury altered a role rather than simply removing a name. You do not need to graduate from enjoyment into permanent analysis. The purpose of understanding the game is to make watching it richer.
 
-You are now equipped to follow the broad shape of a game, recognise the central people on five clubs and ask questions that have real answers. The rest comes from accumulated evenings: the unexpected save, the irritating rivalry game, the prospect who suddenly looks comfortable and the goal you will remember because you watched it with your friends. Enjoy the drive, and enjoy having a team.
-''','Save the audio before leaving. Use the notebook after your next Canadiens replay; one observation per field is enough.')
+You are now equipped to follow the broad shape of a game, recognise the central people on five clubs and ask questions that have real answers. The rest comes from accumulated evenings: the unexpected save, the irritating rivalry game, the prospect who suddenly looks comfortable and the goal you will remember because you watched it with your friends. Enjoy the course, and enjoy having a team.
+''','Use the notebook after your next Canadiens replay; one observation per field is enough.')
 
 NHL='https://www.nhl.com'
 teams=[]
@@ -536,10 +536,5 @@ glossary.sort(key=lambda entry:entry['term'].casefold())
 quick_rules=json.loads((ROOT/'quick-rules.json').read_text(encoding='utf-8'))
 data=dict(date='15 October 2026',statsDate='14 October 2026',version='2026-10-15.2',lessons=lessons,teams=teams,glossary=glossary,quickRules=quick_rules,quiz=quiz,sources=sources)
 (OUT/'data.json').write_text(json.dumps(data,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-audio_dir=ROOT/'audio-scripts';audio_dir.mkdir(exist_ok=True)
-for l in lessons:
-    script=l['title'].split(' · ',1)[1]+'.\n\n'+l['deck']+'\n\n'+'\n\n'.join(l['paragraphs'])+'\n\nSomething to try next time. '+l['exercise']
-    for a,b in [('Stützle','Stootz luh'),('Dobeš','Doh besh'),('Šilovs','Shee lovs'),('Xhekaj','Jack eye'),('Caufield','Caw field'),('Hutson','Hut son'),('St. Louis','Saint Lou ee'),('Slafkovsky','Slaf koff ski')]: script=script.replace(a,b)
-    (audio_dir/(l['id']+'.txt')).write_text(script,encoding='utf-8')
 words=sum(len(' '.join(l['paragraphs']).split()) for l in lessons)
-print(f'Built {len(lessons)} chapters, {words:,} spoken words, {len(glossary)} glossary entries, {sum(len(t["roster"]) for t in teams)} roster entries and {len(quiz)} quiz questions.')
+print(f'Built {len(lessons)} reading chapters, {words:,} words, {len(glossary)} glossary entries, {sum(len(t["roster"]) for t in teams)} roster entries and {len(quiz)} quiz questions.')
